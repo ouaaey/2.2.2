@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
+
     <title>Cars</title>
 </head>
 <body>
 <h1>Cars</h1>
-<table border="1">
+<table>
     <thead>
     <tr>
         <th>Model</th>
@@ -23,10 +23,5 @@
     </tr>
     </tbody>
 </table>
-<div>
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
-    </th:block>
-</div>
 </body>
 </html>
