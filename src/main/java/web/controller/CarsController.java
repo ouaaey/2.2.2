@@ -6,13 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import web.service.CarService;
+import web.service.CarServiceInterface;
 
 @Controller
 public class CarsController {
-    private final CarService carService;
+    private final CarServiceInterface carService;
 
     @Autowired
-    public CarsController(CarService carService) {
+    public CarsController(CarServiceInterface carService) {
         this.carService = carService;
     }
 

@@ -5,8 +5,9 @@ import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
-public class CarService {
+public class CarService implements CarServiceInterface {
     private static final List<Car> cars = new ArrayList<>();
 
     static {
@@ -17,8 +18,12 @@ public class CarService {
         cars.add(new Car("bmw", "white", 2020));
     }
 
+    @Override
     public List<Car> getCars(int count) {
-        if (count >= 5) {
+        if (count < 0) {
+            throw new IllegalArgumentException("count < 0");
+        }
+        if (count >= cars.size()) {
             return cars;
         }
         return cars.subList(0, count);
